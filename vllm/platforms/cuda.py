@@ -53,6 +53,7 @@ def device_id_to_physical_device_id(device_id: int) -> int:
                 "Check https://github.com/vllm-project/vllm/issues/8402 for"
                 " more information.")
             raise RuntimeError(msg)
+        device_ids = list(range(len(device_ids)))
         physical_device_id = device_ids[device_id]
         return int(physical_device_id)
     else:
